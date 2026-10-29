@@ -51,9 +51,9 @@ En la implementación sobre el PCB, se estableció un mecanismo de sensado físi
 
 | Pin / Componente | Nombre o Función | Descripción en el Sistema / Conexión |
 | :--- | :--- | :--- |
-| **Pin 12 FPGA** | Detección de Jack (*Jack Detect*) | Recibe la señal física al insertar el conector de 3.5 mm para advertir al sistema sobre la presencia de audífonos. |
-| **Pin 57 y 56 FPGA** | Canales de Audio / Salidas PWM | Se activan y gestionan en respuesta a la detección del jack para enrutar la señal hacia la salida correspondiente. |
-| **Pin 1 del TC8002D** | Control de Apagado (*Shutdown*) | Conectado a la lógica de control de la FPGA para habilitar o apagar el amplificador de potencia. |
+| **Pin 12 FPGA** | Detección de Jack  | Recibe la señal física al insertar el conector de 3.5 mm para advertir al sistema sobre la presencia de audífonos. |
+| **Pin 57 y 56 FPGA** | Canales de Audio  | Se activan y gestionan en respuesta a la detección del jack para enrutar la señal hacia la salida correspondiente. |
+| **Pin 1 del TC8002D** | Control de Apagado  | Conectado a la lógica de control de la FPGA para habilitar o apagar el amplificador de potencia. |
 | **Pin 1 FPGA_Vcc** | Alimentación | Línea de voltaje (VCC) para alimentar y estabilizar los componentes de la etapa analógica. |
 | **GND** | Tierra | Planos de masa comunes para la referencia de voltajes y mitigación de ruido. |
 
