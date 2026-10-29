@@ -36,15 +36,13 @@ A partir del análisis del hardware original de la Game Boy Color y las especifi
 ---
 
 ## 4. Análisis del Esquemático y Conexiones Físicas
-Durante el proceso de diseño esquemático y circuitería, se determinó la integración con la etapa de salida analógica:
-* **Modulación PWM:** La señal digital combinada de los canales se procesa mediante un modulador por ancho de pulso desde la FPGA.
-* **Amplificador de Audio (TC8002D):** La señal filtrada se acopla a la entrada del circuito integrado amplificador de audio mono Clase AB (TC8002D), diseñado para proporcionar potencia de salida eficiente hacia el altavoz físico de la consola.
-* **Mapa Teórico de Registros (Direcciones `0xFF10` - `0xFF3F`):**
-  - `0xFF10 - 0xFF14`: Control de canales y frecuencias (Canal 1).
-  - `0xFF16 - 0xFF19`: Parámetros del Canal 2.
-  - `0xFF1A - 0xFF1E`: Configuración y Wave RAM del Canal 3.
-  - `0xFF20 - 0xFF23`: Configuración del Canal 4 (Ruido).
-  - `0xFF24 - 0xFF26`: Control de volumen maestro, selección de canales estéreo/mono y encendido general de la APU.
+| Pin / Componente | Nombre o Función | Descripción en el Sistema / Conexión |
+| :--- | :--- | :--- |
+| **Pin 57 FPGA** | Salida de Audio Principal (PWM) | Transmite la señal modulada por ancho de pulso generada por la APU hacia la red de acondicionamiento analógico |
+| **Pin 56 FPGA** | Conmutación / Detección de Jack | Se activa junto al pin 57 al insertar el conector Jack de 3.5 mm para gestionar el cambio de salida o canal secundario |
+| **Pin 12 FPGA** | Control de Apagado (*Shutdown*) | Vinculado al Pin 1 del amplificador TC8002D para permitir que el SoC gestione el consumo energético |
+| **Pin 1 FPGA_Vcc** | Alimentación | Línea de voltaje (VCC) proveniente de la FPGA para alimentar y estabilizar componentes de la etapa |
+| **GND** | Tierra / Referencia | Planos de masa comunes para fijar las referencias de voltaje y evitar ruidos eléctricos |
 
 ---
 
