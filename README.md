@@ -37,29 +37,29 @@ A partir del análisis del hardware original de la Game Boy Color y las especifi
 
 ## 4. Análisis del Esquemático y Conexiones Físicas
 
-El montaje físico de la etapa de audio en la FPGBC requiere una correcta interconexión entre los pines digitales de propósito general (GPIO) de la FPGA y los componentes analógicos de potencia, filtrado y detección. A partir del análisis del esquemático y la verificación en laboratorio realizada sobre la tarjeta[cite: 3], se identifican las siguientes rutas y funciones clave:
+El montaje físico de la etapa de audio en la FPGBC requiere una correcta interconexión entre los pines digitales de propósito general (GPIO) de la FPGA y los componentes analógicos de potencia, filtrado y detección. A partir del análisis del esquemático y la verificación en laboratorio realizada sobre la tarjeta, se identifican las siguientes rutas y funciones clave:
 
 ### 4.1. Detección de Inserción del Jack y Conmutación de Audio
-En la implementación sobre el PCB, se estableció un mecanismo de sensado físico conectado directamente a la FPGA para alternar entre el altavoz y los auriculares[cite: 3]:
+En la implementación sobre el PCB, se estableció un mecanismo de sensado físico conectado directamente a la FPGA para alternar entre el altavoz y los auriculares:
 
-* **Pin de Detección (Pin 12 FPGA):** Funciona como la entrada digital de sensado. Al insertar el conector Jack de 3.5 mm en el socket, se cierra o abre el contacto mecánico, enviando la señal de alerta al pin 12 de la FPGA para indicar que hay un dispositivo de audio externo conectado[cite: 3].
-* **Señales de Audio Activas (Pines 57 y 56 FPGA):** Una vez que el sistema detecta la inserción a través del pin 12, la lógica interna de la FPGA activa de manera conjunta o conmuta las señales de audio hacia los **pines 57 y 56** para enrutar la señal correctamente hacia el conector de los audífonos[cite: 3].
-* **Control Lógico de Apagado (Shutdown):** Vinculado al Pin 1 del amplificador TC8002D para permitir que el SoC gestione el consumo energético de la etapa de potencia según sea necesario[cite: 1, 3].
-* **Líneas de Alimentación y Referencia:** Conexiones como **Pin 1 FPGA_Vcc** y los puntos de tierra **GND**, indispensables para fijar los voltajes de referencia y evitar ruido eléctrico[cite: 3].
+* **Pin de Detección (Pin 12 FPGA):** Funciona como la entrada digital de sensado. Al insertar el conector Jack de 3.5 mm en el socket, se cierra o abre el contacto mecánico, enviando la señal de alerta al pin 12 de la FPGA para indicar que hay un dispositivo de audio externo conectado.
+* **Señales de Audio Activas (Pines 57 y 56 FPGA):** Una vez que el sistema detecta la inserción a través del pin 12, la lógica interna de la FPGA activa de manera conjunta o conmuta las señales de audio hacia los **pines 57 y 56** para enrutar la señal correctamente hacia el conector de los audífonos.
+* **Control Lógico de Apagado (Shutdown):** Vinculado al Pin 1 del amplificador TC8002D para permitir que el SoC gestione el consumo energético de la etapa de potencia según sea necesario.
+* **Líneas de Alimentación y Referencia:** Conexiones como **Pin 1 FPGA_Vcc** y los puntos de tierra **GND**, indispensables para fijar los voltajes de referencia y evitar ruido eléctrico.
 
 ### 4.2. Tabla Resumen de Pines y Conexiones
 
 | Pin / Componente | Nombre o Función | Descripción en el Sistema / Conexión |
 | :--- | :--- | :--- |
-| **Pin 12 FPGA** | Detección de Jack (*Jack Detect*) | Recibe la señal física al insertar el conector de 3.5 mm para advertir al sistema sobre la presencia de audífonos[cite: 3]. |
-| **Pin 57 y 56 FPGA** | Canales de Audio / Salidas PWM | Se activan y gestionan en respuesta a la detección del jack para enrutar la señal hacia la salida correspondiente[cite: 3]. |
-| **Pin 1 del TC8002D** | Control de Apagado (*Shutdown*) | Conectado a la lógica de control de la FPGA para habilitar o apagar el amplificador de potencia[cite: 1, 3]. |
-| **Pin 1 FPGA_Vcc** | Alimentación | Línea de voltaje (VCC) para alimentar y estabilizar los componentes de la etapa analógica[cite: 3]. |
-| **GND** | Tierra / Referencia | Planos de masa comunes para la referencia de voltajes y mitigación de ruido[cite: 3]. |
+| **Pin 12 FPGA** | Detección de Jack (*Jack Detect*) | Recibe la señal física al insertar el conector de 3.5 mm para advertir al sistema sobre la presencia de audífonos. |
+| **Pin 57 y 56 FPGA** | Canales de Audio / Salidas PWM | Se activan y gestionan en respuesta a la detección del jack para enrutar la señal hacia la salida correspondiente. |
+| **Pin 1 del TC8002D** | Control de Apagado (*Shutdown*) | Conectado a la lógica de control de la FPGA para habilitar o apagar el amplificador de potencia. |
+| **Pin 1 FPGA_Vcc** | Alimentación | Línea de voltaje (VCC) para alimentar y estabilizar los componentes de la etapa analógica. |
+| **GND** | Tierra | Planos de masa comunes para la referencia de voltajes y mitigación de ruido. |
 
 ### 4.3. Etapa de Filtrado RC y Amplificación (TC8002D)
-* **Filtro Paso-Bajo (RC):** Las señales moduladas por ancho de pulsos (PWM) provenientes de la FPGA atraviesan los componentes pasivos SMD para suprimir las altas frecuencias de conmutación y convertirlas en una onda de voltaje analógica continua[cite: 3].
-* **Acoplamiento al Amplificador TC8002D:** La señal condicionada ingresa a las terminales del amplificador Clase AB (TC8002D)[cite: 1, 2], el cual se encarga de elevar la potencia para entregar la salida diferencial (`VO1` y `VO2`) hacia el altavoz o el jack según corresponda[cite: 1, 3].
+* **Filtro Paso-Bajo (RC):** Las señales moduladas por ancho de pulsos (PWM) provenientes de la FPGA atraviesan los componentes pasivos SMD para suprimir las altas frecuencias de conmutación y convertirlas en una onda de voltaje analógica continua.
+* **Acoplamiento al Amplificador TC8002D:** La señal condicionada ingresa a las terminales del amplificador Clase AB (TC8002D), el cual se encarga de elevar la potencia para entregar la salida diferencial (`VO1` y `VO2`) hacia el altavoz o el jack según corresponda.
 ---
 
 ## 5. Estructura del Repositorio
