@@ -25,6 +25,9 @@ Este repositorio contiene el diseño, la documentación teórica y la implementa
  La siguiente imagen muestra la arquitectura de la salida de audio como se puede observar se encuentra dos caminos para la salida de audio, una para el jack y el parlante de la Game Boy COlor
 <img width="991" height="450" alt="image" src="https://github.com/user-attachments/assets/cf7ef2f0-11ed-4c4e-9d8d-5b97cb28dc2d" />
 
+<img width="706" height="593" alt="image" src="https://github.com/user-attachments/assets/05c26bd8-0c05-47db-b47e-fba355a108b8" />
+
+
 
 ---
 
