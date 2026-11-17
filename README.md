@@ -28,6 +28,9 @@ Este repositorio contiene el diseño, la documentación teórica y la implementa
 <img width="706" height="593" alt="image" src="https://github.com/user-attachments/assets/05c26bd8-0c05-47db-b47e-fba355a108b8" />
 
 
+<img width="1211" height="576" alt="image" src="https://github.com/user-attachments/assets/9b04768d-3f75-4f95-9cdf-15a7902e610c" />
+
+
 
 ---
 
