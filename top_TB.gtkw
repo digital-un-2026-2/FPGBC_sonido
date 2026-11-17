@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed Nov 11 17:00:16 2026
+[*]
+[dumpfile] "/home/vargas/fpga/audio_test/src/top_TB.vcd"
+[dumpfile_mtime] "Wed Nov 11 16:58:29 2026"
+[dumpfile_size] 6396230
+[savefile] "/home/vargas/fpga/audio_test/src/top_TB.gtkw"
+[timestart] 46000000
+[size] 1300 689
+[pos] -27 -24
+*-30.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 278
+[signals_width] 86
+[sst_expanded] 1
+[sst_vpaned_height] 188
+@28
+top_TB.audio_l
+top_TB.audio_r
+top_TB.clk
+top_TB.rst_n
+[pattern_trace] 1
+[pattern_trace] 0
