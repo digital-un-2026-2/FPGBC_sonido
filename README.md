@@ -23,8 +23,8 @@ Este repositorio contiene el diseño, la documentación teórica y la implementa
 
 ## 2. Arquitectura y Diagrama de Bloques 
 En esta sección se muestra cómo sale el sonido del sistema y los dos caminos que puede tomar: ir hacia el **jack** (audífonos) o hacia el **parlante** de la Game Boy Color.
-
 <img width="991" height="450" alt="image" src="https://github.com/user-attachments/assets/cf7ef2f0-11ed-4c4e-9d8d-5b97cb28dc2d" />
+
 
 * **Caminos de salida:** Muestra cómo se divide el audio para ir al jack o al parlante.
 
