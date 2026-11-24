@@ -24,12 +24,12 @@ Este repositorio contiene el diseño, la documentación teórica y la implementa
 ## 2. Arquitectura y Diagrama de Bloques 
  La siguiente imagen muestra la arquitectura de la salida de audio como se puede observar se encuentra dos caminos para la salida de audio, una para el jack y el parlante de la Game Boy COlor
 <img width="991" height="450" alt="image" src="https://github.com/user-attachments/assets/cf7ef2f0-11ed-4c4e-9d8d-5b97cb28dc2d" />
-
+* **Diagrama general de rutas de salida:** Ilustra la bifurcación de la señal de audio desde la etapa de generación/acondicionamiento hacia los dos destinos físicos del sistema (jack de audífonos y parlante), evidenciando la separación o conmutación entre ambos caminos.
 <img width="706" height="593" alt="image" src="https://github.com/user-attachments/assets/05c26bd8-0c05-47db-b47e-fba355a108b8" />
 
-
+* **Detalle de bloques y señales de control:** Muestra con mayor nivel de detalle la interacción entre los bloques de procesamiento/control, las líneas de habilitación o conmutación y la etapa de salida de audio.
 <img width="1211" height="576" alt="image" src="https://github.com/user-attachments/assets/9b04768d-3f75-4f95-9cdf-15a7902e610c" />
-
+* **Esquema de integración del subsistema:** Presenta la vista amplia de cómo se articula el subsistema de audio dentro de la arquitectura general del proyecto, conectando la lógica digital con las salidas físicas hacia el usuario.
 
 
 ---
