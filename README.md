@@ -22,14 +22,19 @@ Este repositorio contiene el diseño, la documentación teórica y la implementa
 ---
 
 ## 2. Arquitectura y Diagrama de Bloques 
-En esta sección se muestra cómo sale el sonido del sistema y los dos caminos que puede tomar: ir hacia el **jack** (audífonos) o hacia el **parlante** de la Game Boy Color
+En esta sección se muestra cómo sale el sonido del sistema y los dos caminos que puede tomar: ir hacia el **jack** (audífonos) o hacia el **parlante** de la Game Boy Color.
+
 <img width="991" height="450" alt="image" src="https://github.com/user-attachments/assets/cf7ef2f0-11ed-4c4e-9d8d-5b97cb28dc2d" />
-**Caminos de salida:** Muestra cómo se divide el audio para ir al jack o al parlante.<img width="706" height="593" alt="image" src="https://github.com/user-attachments/assets/05c26bd8-0c05-47db-b47e-fba355a108b8" />
 
-* **Detalle de bloques y señales de control:** Muestra con mayor nivel de detalle la interacción entre los bloques de procesamiento/control, las líneas de habilitación o conmutación y la etapa de salida de audio.
+* **Caminos de salida:** Muestra cómo se divide el audio para ir al jack o al parlante.
+
+<img width="706" height="593" alt="image" src="https://github.com/user-attachments/assets/05c26bd8-0c05-47db-b47e-fba355a108b8" />
+
+* **Bloques y señales:** Detalla los bloques que manejan el sonido y las señales que controlan cuándo se activa cada salida.
+
 <img width="1211" height="576" alt="image" src="https://github.com/user-attachments/assets/9b04768d-3f75-4f95-9cdf-15a7902e610c" />
-bloques que manejan el sonido y las señales que controlan cuándo se activa cada salida.
 
+* **Vista general:** Resume cómo se conecta todo el sistema de sonido con el resto del proyecto.
 ---
 
 ## 3. Ingeniería Inversa: Subsistema de Audio (APU)
